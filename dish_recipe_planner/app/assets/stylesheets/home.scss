@@ -1,0 +1,35 @@
+.background-column-1 {
+    background-image: asset-url('salmon.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.background-column-2 {
+    background-image: url('path_to_your_second_image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.background-with-mask {
+    position: relative;
+    background-image: asset-url('salmon.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.background-with-mask::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4); /* Grey color with 40% opacity */
+    z-index: 1;
+}
+
+.background-with-mask > * {
+    position: relative;
+    z-index: 2;
+}
