@@ -1,8 +1,13 @@
+
+// app\javascript\packs\application.js
+
 // Reference:  https://dev.to/ndrean/dynamic-nested-form-in-rails-4k9p#:~:text=URL%3A%20https%3A%2F%2Fdev.to%2Fndrean%2Fdynamic
 // Reference:  https://devcamp.com/trails/professional-rails-development-course/campsites/12/guides/implementing-dynamic-forms-in-rails
 
 //| The remove_field -- is a function hides a section of a form (a "nested field"). It first sets the value of a hidden input field preceding the clicked link to "1", which is typically used to mark the field for deletion when the form is submitted. Then, it hides the closest parent element with the class .nested-fields.
 //|
+
+import "nested_fields"
 
 function remove_fields(link) {
     $(link).previous("input[type=hidden]").value = "1";
