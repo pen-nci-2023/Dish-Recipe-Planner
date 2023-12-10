@@ -1,6 +1,7 @@
 <!-- _ingredient_fields.html.erb -->
 <div class="nested-fields">
-  <%= f.label :ingredient_name %>
-  <%= f.text_field :ingredient_name %>
-  <%= link_to "Remove", '#', class: "remove_fields" %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to 'Remove', '#', class: 'remove-ingredient' %>
 </div>
