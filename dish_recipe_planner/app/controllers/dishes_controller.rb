@@ -64,7 +64,11 @@ class DishesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
+
+    #|--------------------------------------------
+    #| Modified the code to cater for the nested form
+    #|
     def dish_params
-      params.require(:dish).permit(:name, :ingredient_id)
+      params.require(:dish).permit(:name, ingredients_attributes: [:id, :ingredient_name, :_destroy])
     end
 end
