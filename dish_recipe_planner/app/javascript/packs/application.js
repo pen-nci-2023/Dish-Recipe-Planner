@@ -7,6 +7,10 @@
 //| The remove_field -- is a function hides a section of a form (a "nested field"). It first sets the value of a hidden input field preceding the clicked link to "1", which is typically used to mark the field for deletion when the form is submitted. Then, it hides the closest parent element with the class .nested-fields.
 //|
 
+import "channels"
+import "../your_custom_script" // Import your custom scripts that use jQuery
+
+console.log($); // Test jQuery
 import "nested_fields"
 
 function remove_fields(link) {
