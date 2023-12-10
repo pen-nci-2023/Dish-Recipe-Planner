@@ -1,3 +1,5 @@
+# PATH: app\controllers\dishes_controller.rb
+
 class DishesController < ApplicationController
   before_action :set_dish, only: %i[ show edit update destroy ]
 
@@ -13,6 +15,7 @@ class DishesController < ApplicationController
   # GET /dishes/new
   def new
     @dish = Dish.new
+    @dish.ingredients.build
   end
 
   # GET /dishes/1/edit
@@ -69,6 +72,6 @@ class DishesController < ApplicationController
     #| Modified the code to cater for the nested form
     #|
     def dish_params
-      params.require(:dish).permit(:name, ingredients_attributes: [:id, :ingredient_name, :_destroy])
+      params.require(:dish).permit(:name, ingredients_attributes: [:id, :name, :_destroy])
     end
 end

@@ -1,2 +1,4 @@
+# PATH:  app\views\dishes\_dish.json.jbuilder
+
 json.extract! dish, :id, :name, :ingredient_id, :created_at, :updated_at
 json.url dish_url(dish, format: :json)

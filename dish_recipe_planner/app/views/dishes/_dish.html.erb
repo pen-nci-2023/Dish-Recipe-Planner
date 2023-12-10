@@ -5,8 +5,11 @@
   </p>
 
   <p>
-    <strong>Ingredient:</strong>
-    <%= dish.ingredient_id %>
+    <strong>Ingredients:</strong>
+    <ul>
+      <% dish.ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %></li> <!-- or any other attribute of ingredient -->
+      <% end %>
+    </ul>
   </p>
-
 </div>
