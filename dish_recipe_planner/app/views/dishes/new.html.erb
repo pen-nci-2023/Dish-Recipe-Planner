@@ -1,31 +1,15 @@
-<!-- PATH: app\views\dishes\new.html.erb  -->
+<!-- app/views/dishes/new.html.erb -->
 
-<h1>New dish</h1>
-
-<%= form_with(model: @dish, local: true) do |form| %>
-  
-  <!-- Fields for Dish -->
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<%= form_with(model: @dish) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </div>
-<!-- app\views\dishes\new.html.erb-->
-
-  <!-- Nested Fields for Ingredients -->
-  <h3>Ingredients:</h3>
-  <div id="ingredients">
-    <%= form.fields_for :ingredients do |ingredient_form| %>
-      <!-- Render a partial for ingredient fields -->
-      <%= render 'ingredient_fields', f: ingredient_form %>
-    <% end %>
-  </div>
-
-  <!-- Link to add more ingredient fields (handled by JavaScript) -->
-  <%= link_to 'Add Ingredient', '#', id: 'add-ingredient' %>
-
-  <!-- Submit Button -->
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
+  <%= f.fields_for :ingredients do |ingredient_fields| %>
+    <div>
+      <%= ingredient_fields.label :name %>
+      <%= ingredient_fields.text_field :name %>
+    </div>
+  <% end %>
+  <%= f.submit "Submit" %>
 <% end %>

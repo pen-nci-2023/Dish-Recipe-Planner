@@ -1,4 +1,4 @@
-#PATH: app\models\dishes_ingredient.rb 
+# app/models/dishes_ingredient.rb
 
 class DishesIngredient < ApplicationRecord
   belongs_to :dish
