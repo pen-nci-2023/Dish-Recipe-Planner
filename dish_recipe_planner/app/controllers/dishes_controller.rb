@@ -1,3 +1,5 @@
+# PATH:  app\controllers\dishes_controller.rb
+
 class DishesController < ApplicationController
   before_action :set_dish, only: %i[ show edit update destroy ]
 
