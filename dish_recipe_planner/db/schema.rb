@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_06_233511) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_06_203213) do
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.integer "ingredient_id"
@@ -27,9 +27,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_06_233511) do
     t.index ["ingredient_id"], name: "index_dishes_ingredients_on_ingredient_id"
   end
 
-  create_table "ingredients", primary_key: "ingredient_id", force: :cascade do |t|
+  create_table "ingredients", force: :cascade do |t|
     t.string "name"
     t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "dishes_ingredients", "dishes"
