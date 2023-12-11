@@ -21,16 +21,17 @@ class IngredientsController < ApplicationController
 
   # POST /ingredients or /ingredients.json
   def create
-    @ingredient = Ingredient.new(ingredient_params)
+    @ingredient = Ingredient.find_or_initialize_by(name: ingredient_params[:name])
+    if @ingredient.new_record?
+      @ingredient.quantity = ingredient_params[:quantity]
+    else
+      @ingredient.quantity += ingredient_params[:quantity].to_i
+    end
 
-    respond_to do |format|
-      if @ingredient.save
-        format.html { redirect_to ingredient_url(@ingredient), notice: "Ingredient was successfully created." }
-        format.json { render :show, status: :created, location: @ingredient }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @ingredient.errors, status: :unprocessable_entity }
-      end
+    if @ingredient.save
+      redirect_to ingredients_path, notice: 'Ingredient saved successfully'
+    else
+      render :new
     end
   end
 
