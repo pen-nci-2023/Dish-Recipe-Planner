@@ -1,3 +1,5 @@
+<!-- PATH:  app\views\dishes\new.html.erb -->
+
 <h1>New dish</h1>
 
 <%= form_with(model: @dish, local: true) do |form| %>
@@ -19,6 +21,15 @@
 
   <!-- Link to add more ingredient fields (handled by JavaScript) -->
   <%= link_to 'Add Ingredient', '#', id: 'add-ingredient' %>
+
+  <!-- JavaScript code to handle adding more ingredient fields -->
+  <script>
+    $(document).on("click", "#add-ingredient", function() {
+      // JavaScript logic to append more ingredient fields to the form
+       var newIngredientField = $("<%= j(render 'ingredient_fields', f: form.object.ingredients.build) %>");
+      $("#ingredients").append(newIngredientField);
+    });
+  </script>
 
   <!-- Submit Button -->
   <div class="actions">
