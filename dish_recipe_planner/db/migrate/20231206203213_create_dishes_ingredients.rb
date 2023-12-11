@@ -1,3 +1,5 @@
+# PATH: db\migrate\20231206203213_create_dishes_ingredients.rb
+
 class CreateDishesIngredients < ActiveRecord::Migration[7.0]
   def change
 
