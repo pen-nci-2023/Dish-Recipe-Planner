@@ -1,0 +1,15 @@
+<!-- PATH: app\views\ingredients\new.html.erb -->
+
+<h1>New ingredient</h1>
+
+<%= form_with(model: @ingredient, url: ingredients_path) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+  <%= form.submit "Save" %>
+<% end %>

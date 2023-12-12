@@ -1,0 +1,69 @@
+.background-column-1 {
+    background-image: asset-url('salmon.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.background-column-2 {
+    background-image: asset-url('ingredience_stock.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+.background-with-mask::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(214, 243, 221, 0.4); /* Grey color with 40% opacity */
+    z-index: 1;
+}
+
+.background-with-mask > * {
+    position: relative;
+    z-index: 2;
+    height: 300px; 
+}
+
+
+.col-min-height-set {
+    min-height: 300px; 
+}
+
+.col-max-height-set {
+    max-height: 500px; 
+}
+
+.h1-custom{
+    height: 300 px;
+}
+
+.overlay-text {
+    position: relative;
+    z-index: 2; /* Above the background and mask */
+    color: rgb(7, 7, 7); /* For better visibility */
+    /* Additional styling for text positioning and appearance */
+    font-size: 30px;
+
+    display: flex;
+    justify-content: center; /* Aligns content horizontally center */
+    align-items: center; /* Aligns content vertically center */
+    height: 100%; /* Takes the full height of the parent div */
+
+    // background-color: rgba(255, 255, 0, 0.5);
+}
+
+.overlay-text:hover .text-background {
+    font-size: larger; /* Increase the font size on hover */
+}
+
+.text-background {
+    background-color: rgba(237, 236, 214, 0.7);
+    padding: 0 4px; /* Optional: Adjust padding to your liking */
+    font-family: Garamond, serif;
+}

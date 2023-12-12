@@ -1,0 +1,17 @@
+<!-- PATH:  app\views\ingredients\_ingredient.html.erb-->
+
+<div id="<%= dom_id ingredient %>">
+  <p>
+    <strong>Name:</strong>
+    <%= ingredient.name %>
+  </p>
+
+  <p>
+    <strong>Quantity:</strong>
+    <%= ingredient.quantity %>
+  </p>
+
+</div>
+
+<%= link_to 'Back to Ingredients List', ingredients_path %>
+

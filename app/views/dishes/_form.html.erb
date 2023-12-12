@@ -1,0 +1,18 @@
+<%= form_with(model: @dish, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <h3>Ingredients:</h3>
+  <div id="ingredients">
+    <%= form.fields_for :ingredients do |ingredient_form| %>
+      <%= render 'ingredient_fields', f: ingredient_form %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= link_to_add_fields "Add Ingredient", form, :ingredients %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
