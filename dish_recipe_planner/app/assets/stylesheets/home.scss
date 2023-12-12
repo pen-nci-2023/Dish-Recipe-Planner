@@ -32,21 +32,39 @@
 .background-with-mask > * {
     position: relative;
     z-index: 2;
+    height: 300px; 
 }
 
 
 .col-min-height-set {
-    min-height: 300px; /* Replace with your desired minimum height */
+    min-height: 300px; 
 }
 
 .col-max-height-set {
-    max-height: 500px; /* Replace with your desired maximum height */
+    max-height: 500px; 
 }
-
 
 .overlay-text {
     position: relative;
     z-index: 2; /* Above the background and mask */
     color: rgb(7, 7, 7); /* For better visibility */
     /* Additional styling for text positioning and appearance */
+    font-size: 30px;
+
+    display: flex;
+    justify-content: center; /* Aligns content horizontally center */
+    align-items: center; /* Aligns content vertically center */
+    height: 100%; /* Takes the full height of the parent div */
+
+    // background-color: rgba(255, 255, 0, 0.5);
+}
+
+.overlay-text:hover .text-background {
+    font-size: larger; /* Increase the font size on hover */
+}
+
+.text-background {
+    background-color: rgba(237, 236, 214, 0.7);
+    padding: 0 4px; /* Optional: Adjust padding to your liking */
+    font-family: Garamond, serif;
 }
