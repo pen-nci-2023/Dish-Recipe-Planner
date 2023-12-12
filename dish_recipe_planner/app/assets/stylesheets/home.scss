@@ -2,21 +2,16 @@
     background-image: asset-url('salmon.jpg'); 
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 .background-column-2 {
-    background-image: url('path_to_your_second_image.jpg');
+    background-image: asset-url('ingredience_stock.jpg'); 
     background-size: cover;
     background-position: center;
-}
-
-
-.background-with-mask {
     position: relative;
-    background-image: asset-url('salmon.jpg'); 
-    background-size: cover;
-    background-position: center;
 }
+
 
 .background-with-mask::before {
     content: '';
@@ -42,6 +37,10 @@
 
 .col-max-height-set {
     max-height: 500px; 
+}
+
+.h1-custom{
+    height: 300 px;
 }
 
 .overlay-text {
